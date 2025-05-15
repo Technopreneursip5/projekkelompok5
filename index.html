@@ -3,223 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EXPO TIF_AGB</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Home - Herbal Sehat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
     }
 
     body {
+      display: flex;
+      flex-direction: column;
       background-image: url('img/latar.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: center center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #333;
-      min-height: 100vh;
     }
 
     header {
       background-color: rgba(0, 0, 0, 0.6);
       color: white;
-      padding: 15px 20px;
+      padding: 10px 15px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
     }
 
-    .header-content {
+    .logo-bulat {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .judul-header {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+    }
+
+    .judul-header h1 {
+      font-size: 1.2rem;
+      margin-bottom: 3px;
+    }
+
+    .judul-header span {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
       gap: 15px;
     }
 
-    .header-content img {
-      height: 60px;
-      width: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #fff;
-    }
-
-    .expo-title {
-      font-size: 1.8em;
-      font-weight: 700;
-      color: #fff;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    }
-
-    .kelompok-box {
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 1px solid #fff;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: 600;
-      margin-top: 5px;
-      display: inline-block;
-    }
-
-    nav {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .nav-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .nav-links a {
+    nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
-      padding: 8px 15px;
+      font-weight: bold;
+      padding: 8px 12px;
       border-radius: 5px;
       transition: background-color 0.3s;
     }
 
-    .nav-links a:hover {
-      background-color: #555;
+    nav ul li a:hover {
+      background-color: #444;
     }
 
-    .menu-icon {
-      display: none;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
     }
 
     .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    #welcome-message {
-      background-color: rgba(255, 255, 255, 0.92);
+      max-width: 500px;
+      width: 100%;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       text-align: center;
-      padding: 40px 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      margin-bottom: 40px;
     }
 
-    #welcome-message h2 {
-      font-size: 1.8em;
-      color: #111;
+    .container h2 {
+      font-size: 1.4rem;
+      color: #2e7d32;
       margin-bottom: 15px;
     }
 
-    #welcome-message p {
-      font-size: 1.2em;
+    .container p {
+      font-size: 0.95rem;
       color: #444;
       line-height: 1.6;
+      margin: 0 10px;
     }
 
     footer {
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
       text-align: center;
       padding: 20px 0;
-      margin-top: 50px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
     }
 
-    @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        align-items: center;
+    @media (max-width: 600px) {
+      .judul-header h1 {
+        font-size: 1rem;
       }
 
-      .expo-title {
-        font-size: 1.5em;
+      .judul-header span {
+        font-size: 0.8rem;
       }
 
-      #welcome-message h2 {
-        font-size: 1.4em;
+      .container {
+        max-width: 90%;
+        padding: 15px;
       }
 
-      #welcome-message p {
-        font-size: 1em;
+      .container h2 {
+        font-size: 1.2rem;
       }
 
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
+      .container p {
+        font-size: 0.9rem;
+      }
+
+      nav ul {
         gap: 10px;
       }
 
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-icon {
-        display: block;
+      nav ul li a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="header-content">
-    <img src="img/logo.png" alt="Logo Herbal Sehat">
-    <div>
-      <h1 class="expo-title">EXPO TIF_AGB</h1>
-      <div class="kelompok-box">KELOMPOK-5</div>
+  <header>
+    <img src="img/logo.png" alt="Logo Herbal Sehat" class="logo-bulat">
+    <div class="judul-header">
+      <h1>EXPO TIF_AGB</h1>
+      <span>KELOMPOK 5</span>
     </div>
-  </div>
-  <div class="menu-icon" onclick="toggleMenu()">
-    <i class="fa fa-bars"></i>
-  </div>
-</header>
+  </header>
 
-<nav>
-  <div class="nav-container">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="produk.html">Produk</a>
-      <a href="keranjang.html">Keranjang</a>
-      <a href="checkout.html">Checkout</a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="keranjang.html">Keranjang</a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="container">
+      <h2>🌿 Selamat Datang di Website Herbal 🌿</h2>
+      <p>Kami menghadirkan beragam produk herbal alami yang menyehatkan tubuh dan menyegarkan pikiran. Temukan pilihan terbaik seperti <strong>jamu tradisional</strong>, <strong>es cincau segar</strong>, dan <strong>minyak sereh murni</strong> untuk gaya hidup yang lebih sehat dan alami!</p>
     </div>
-  </div>
-</nav>
+  </main>
 
-<main class="container">
-  <section id="welcome-message">
-    <h2>🌿 Selamat Datang Di Web Produk Herbal Kami 🌿</h2>
-    <p>Kami menjual produk herbal berkhasiat. Temukan produk pilihan Anda seperti <strong>es cincau segar</strong>, <strong>jamu herbal tradisional</strong>, dan <strong>minyak sereh murni</strong> yang alami dan menyegarkan.</p>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2025 EXPO TIF_AGB. All rights reserved.</p>
-</footer>
-
-<script>
-  function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-  }
-</script>
+  <footer>
+    <p>&copy; 2025 EXPO TIF_AGB. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>

@@ -13,6 +13,9 @@
     }
 
     body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       background-image: url('img/latar.jpg');
       background-size: cover;
       background-position: center center;
@@ -20,7 +23,6 @@
       background-attachment: fixed;
       color: #333;
       line-height: 1.6;
-      min-height: 100vh;
     }
 
     header {
@@ -34,32 +36,28 @@
       flex-wrap: wrap;
     }
 
-    header img {
-      height: 70px;
-      width: 70px;
+    .logo-bulat {
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #fff;
+      margin-right: 15px;
+      border: 2px solid #fff;
     }
 
-    .header-text {
+    .judul-header {
       display: flex;
       flex-direction: column;
     }
 
-    .expo-title {
-      font-size: 1.8em;
-      font-weight: bold;
-      color: #fff;
+    .judul-header h1 {
+      font-size: 1.2rem;
+      margin-bottom: 3px;
     }
 
-    .kelompok-box {
-      margin-top: 5px;
-      background-color: rgba(255, 255, 255, 0.2);
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: 1px solid #fff;
-      font-size: 0.9em;
+    .judul-header span {
+      font-size: 0.9rem;
+      color: #ccc;
     }
 
     nav ul {
@@ -85,9 +83,10 @@
       border-radius: 5px;
     }
 
-    .container {
+    main.container {
+      flex: 1;
       max-width: 1100px;
-      margin: auto;
+      margin: 20px auto;
       padding: 20px;
       background-color: rgba(255, 255, 255, 0.9);
       border-radius: 8px;
@@ -142,7 +141,6 @@
       padding: 20px 0;
       background-color: rgba(0, 0, 0, 0.5);
       color: white;
-      margin-top: 60px;
     }
 
     .modal {
@@ -199,10 +197,10 @@
 <body>
 
 <header>
-  <img src="img/logo.png" alt="Logo Herbal Sehat" />
-  <div class="header-text">
-    <div class="expo-title">EXPO TIF_AGB</div>
-    <div class="kelompok-box">KELOMPOK-5</div>
+  <img src="img/logo.png" alt="Logo Herbal Sehat" class="logo-bulat">
+  <div class="judul-header">
+    <h1>EXPO TIF_AGB</h1>
+    <span>KELOMPOK 5</span>
   </div>
 </header>
 

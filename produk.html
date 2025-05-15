@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EXPO TIF_AGB</title>
+  <title>Produk - Herbal Sehat</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     * {
@@ -20,106 +19,79 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #333;
       min-height: 100vh;
     }
 
     header {
+      display: flex;
+      align-items: center;
       background-color: rgba(0, 0, 0, 0.6);
       color: white;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 10px 15px;
     }
 
-    .header-content {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .header-content img {
-      height: 60px;
+    .logo-bulat {
       width: 60px;
+      height: 60px;
       border-radius: 50%;
       object-fit: cover;
+      margin-right: 15px;
       border: 2px solid #fff;
     }
 
-    .expo-title {
-      font-size: 1.8em;
-      font-weight: 700;
-      color: #fff;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    }
-
-    .kelompok-box {
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 1px solid #fff;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: 600;
-      margin-top: 5px;
-      display: inline-block;
-    }
-
-    nav {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .nav-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 10px 20px;
+    .judul-header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
     }
 
-    .nav-links {
+    .judul-header h1 {
+      font-size: 1.2rem;
+      margin-bottom: 3px;
+    }
+
+    .judul-header span {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    nav ul {
+      list-style: none;
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
       justify-content: center;
-      width: 100%;
+      flex-wrap: wrap;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      gap: 15px;
     }
 
-    .nav-links a {
+    nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
-      padding: 8px 15px;
+      font-weight: bold;
+      padding: 8px 12px;
       border-radius: 5px;
       transition: background-color 0.3s;
     }
 
-    .nav-links a:hover {
-      background-color: #555;
-    }
-
-    .menu-icon {
-      display: none;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
+    nav ul li a:hover {
+      background-color: #444;
     }
 
     .container {
       max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
 
     #welcome-message {
       background-color: rgba(255, 255, 255, 0.92);
       text-align: center;
-      padding: 30px;
+      padding: 20px;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      font-size: 1.8em;
+      font-size: 1.6em;
       margin-bottom: 30px;
       font-weight: bold;
     }
@@ -132,17 +104,13 @@
     }
 
     .produk-item {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.95);
       border: 1px solid #ddd;
       border-radius: 8px;
-      width: 30%;
+      width: 300px;
       padding: 20px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .produk-item figure {
-      cursor: pointer;
     }
 
     .produk-item img {
@@ -150,7 +118,7 @@
       height: 200px;
       object-fit: contain;
       border-radius: 6px;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     .produk-item figcaption {
@@ -166,7 +134,7 @@
     }
 
     .produk-item .harga {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #4CAF50;
       margin-bottom: 10px;
     }
@@ -191,61 +159,64 @@
     }
 
     @media (max-width: 768px) {
-      .header-content {
+      .produk-container {
         flex-direction: column;
         align-items: center;
-      }
-
-      .expo-title {
-        font-size: 1.5em;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-icon {
-        display: block;
       }
 
       .produk-item {
         width: 100%;
       }
+
+      .judul-header h1 {
+        font-size: 1.2rem;
+      }
+
+      .judul-header span {
+        font-size: 0.85rem;
+      }
+
+      #welcome-message {
+        font-size: 1.3rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    /* Animasi goyang */
+    @keyframes goyang {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(3deg); }
+      50% { transform: rotate(-3deg); }
+      75% { transform: rotate(2deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .goyang {
+      animation: goyang 0.5s ease;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="header-content">
-    <img src="img/logo.png" alt="Logo Herbal Sehat">
-    <div>
-      <h1 class="expo-title">EXPO TIF_AGB</h1>
-      <div class="kelompok-box">KELOMPOK-5</div>
-    </div>
-  </div>
-  <div class="menu-icon" onclick="toggleMenu()">
-    <i class="fa fa-bars"></i>
+  <img src="img/logo.png" alt="Logo Herbal Sehat" class="logo-bulat">
+  <div class="judul-header">
+    <h1>EXPO TIF_AGB</h1>
+    <span>KELOMPOK 5</span>
   </div>
 </header>
 
 <nav>
-  <div class="nav-container">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="produk.html">Produk</a>
-      <a href="keranjang.html">Keranjang</a>
-      <a href="checkout.html">Checkout</a>
-    </div>
-  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="produk.html">Produk</a></li>
+    <li><a href="keranjang.html">Keranjang</a></li>
+    <li><a href="checkout.html">Checkout</a></li>
+  </ul>
 </nav>
 
 <main class="container">
@@ -253,7 +224,7 @@
   <div class="produk-container">
     <div class="produk-item">
       <p>Es Cincau Kelor Herbal</p>
-      <figure onclick="lihatManfaat('Es Cincau Kelor Herbal')">
+      <figure onclick="goyangDanLihatManfaat(this, 'Es Cincau Kelor Herbal')">
         <img src="img/EsCincauKelor.jpg" alt="Es Cincau Kelor Herbal">
         <figcaption>Klik gambar untuk melihat manfaatnya</figcaption>
       </figure>
@@ -262,7 +233,7 @@
     </div>
     <div class="produk-item">
       <p>Jamu Herbal</p>
-      <figure onclick="lihatManfaat('Jamu Herbal')">
+      <figure onclick="goyangDanLihatManfaat(this, 'Jamu Herbal')">
         <img src="img/JamuHerbal.jpg" alt="Jamu Herbal">
         <figcaption>Klik gambar untuk melihat manfaatnya</figcaption>
       </figure>
@@ -271,7 +242,7 @@
     </div>
     <div class="produk-item">
       <p>Minyak Sereh Herbal</p>
-      <figure onclick="lihatManfaat('Minyak Sereh Herbal')">
+      <figure onclick="goyangDanLihatManfaat(this, 'Minyak Sereh Herbal')">
         <img src="img/MinyakSereh.jpg" alt="Minyak Sereh Herbal">
         <figcaption>Klik gambar untuk melihat manfaatnya</figcaption>
       </figure>
@@ -286,11 +257,6 @@
 </footer>
 
 <script>
-  function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-  }
-
   function tambahKeKeranjang(nama, harga) {
     Swal.fire({
       title: 'Tambahkan ke Keranjang?',
@@ -319,7 +285,7 @@
   function lihatManfaat(namaProduk) {
     const manfaat = {
       'Es Cincau Kelor Herbal': 'Membantu menurunkan panas dalam, melancarkan pencernaan, dan kaya antioksidan.',
-      'Jamu Herbal': 'Menurunkan gula darah dan menurunkan resintensi insulin.',
+      'Jamu Herbal': 'Menurunkan gula darah dan menurunkan resistensi insulin.',
       'Minyak Sereh Herbal': 'Menghilangkan jerawat, menghilangkan kutu rambut, dan mencerahkan kulit secara alami.'
     };
 
@@ -328,6 +294,16 @@
       text: manfaat[namaProduk] || 'Informasi manfaat belum tersedia.',
       icon: 'info'
     });
+  }
+
+  function goyangDanLihatManfaat(el, namaProduk) {
+    const img = el.querySelector('img');
+    img.classList.add('goyang');
+    setTimeout(() => {
+      img.classList.remove('goyang');
+    }, 500); // Sesuai durasi animasi
+
+    lihatManfaat(namaProduk);
   }
 </script>
 
